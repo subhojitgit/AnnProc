@@ -1,0 +1,16 @@
+We can use this project to learn the debugging while Annotation processing phase of
+java compilation.
+
+git clone <this project>
+mvn clean install
+the jar will be created in the target directory inside your project directory.
+
+
+To test it:
+1. Setup the remote debug in intelliJ at port 8000, refer: https://stackoverflow.com/questions/21114066/attach-intellij-idea-debugger-to-a-running-java-process
+
+run this from directory according to your workspace.
+2. javac -processor com.home.ann.HelloWorldProcessor main/AnnotationHolder.java -cp ~/zion/AnnProc/target/annproc-0.0.1-SNAPSHOT.jar
+-J-Xdebug -J-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+
+
